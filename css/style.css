@@ -8,7 +8,6 @@ body {
 }
 
 header {
-    /* MUDANÇA PRINCIPAL: Usa Flexbox para controlar o layout interno */
     display: flex;
     flex-direction: column; 
     position: relative;
@@ -17,21 +16,15 @@ header {
     color: #fff;
     padding: 20px;
     padding-top: 30px; 
-    
-    /* Mantém o espaço para a foto em telas maiores (150px da foto + 30px de margem) */
-    padding-left: 250px; 
-    
-    /* ALTERADO: Centraliza o conteúdo dentro do espaço disponível (após o padding-left) */
-    align-items: left; 
+    padding-left: 0px; 
+    align-items: center; 
 }
 
-/* Estilos para a Imagem de Perfil (.header-foto) */
 .header-foto {
     position: absolute;
     top: 50%; 
     left: 20px; 
-    transform: translateY(-50%); 
-    
+    transform: translateY(-50%);  
     width: 190px; 
     height: 190px;
     object-fit: cover;
@@ -39,24 +32,20 @@ header {
     border: 2px solid white;
 }
 
-/* Ajustes para Responsividade (telas menores que 768px) */
 @media (max-width: 768px) {
     .header-foto {
-        /* Remove o posicionamento fixo em telas menores */
         position: static;
-        margin: 0 auto 10px; /* Centraliza a imagem e adiciona margem inferior */
+        margin: 0 auto 10px; 
         transform: none;
         width: 100px; 
         height: 100px;
     }
     
     header {
-        /* Reverte o padding e alinhamento para centralizar tudo na tela pequena */
         padding: 10px 20px; 
         align-items: center; 
     }
 
-    /* Garante que o texto de contato e outros elementos voltem ao centro */
     header h1, 
     header p,
     header nav {
@@ -113,7 +102,6 @@ ul {
     margin-top: 0;
 }
 
-/* Ajuste nos ícones de contato para garantir que o PDF fique do mesmo tamanho */
 .contato img {
     width: 30px; 
     height: 30px;
@@ -122,9 +110,12 @@ ul {
 }
 
 footer {
+    display: flex;
+    flex-direction: column; 
+    position: relative;
     text-align: center;
     padding: 10px;
-    background: #777777;
+    background: #004d99;
     color: #fff;
     bottom: 0;
 }
