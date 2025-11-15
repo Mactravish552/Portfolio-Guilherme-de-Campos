@@ -9,41 +9,64 @@ body {
 
 header {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Isso centraliza o .header-content */
     position: relative;
-    
     background: #004d99;
     color: #fff;
     padding: 20px;
-    padding-top: 30px; 
-    padding-left: 0px; 
-    align-items: center; 
+    padding-top: 30px;
+}
+
+.header-content {
+    display: flex; /* Adicione/Mantenha */
+    flex-direction: row; /* Altera de 'column' para 'row' para desktop */
+    align-items: center; /* Alinha verticalmente no centro */
+    justify-content: center; /* Centraliza o conteúdo dentro do header */
+    max-width: 900px; /* Limita a largura do bloco total */
+    width: 100%;
+}
+
+.header-text-container {
+    display: flex;
+    flex-direction: column; /* Empilha Nome, Contato e Nav */
+    align-items: flex-start; /* Alinha o texto à esquerda do container */
+    margin-left: 30px; /* Adiciona espaçamento entre a foto e o texto */
 }
 
 .header-foto {
-    position: absolute;
-    top: 50%; 
-    left: 20px; 
-    transform: translateY(-50%);  
-    width: 190px; 
-    height: 190px;
+    width: 150px; 
+    height: 150px;
     object-fit: cover;
     border-radius: 10%;
     border: 2px solid white;
+    /* margin-right: 30px; <- Mantenha esta ou ajuste */
+    margin-right: 30px; /* Garante o espaçamento à direita da foto */
+    flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px; 
+        justify-content: center;
+    }
+
     .header-foto {
-        position: static;
-        margin: 0 auto 10px; 
-        transform: none;
+        margin: 0 auto 10px;
         width: 100px; 
         height: 100px;
     }
     
-    header {
-        padding: 10px 20px; 
-        align-items: center; 
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-text-container {
+        align-items: center;
+        margin-left: 0;
     }
 
     header h1, 
